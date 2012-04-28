@@ -1,0 +1,123 @@
+---
+layout: layout
+title: Commands Listing
+---
+<h3>Commands</h3>
+
+<p>The commands listing on this page is broken into sections by purpose. <br>
+Permission nodes required for a feature are listed.  
+Note that these are not the only permission nodes in the plugin.
+See the <a href='{{ site.url }}/permissions/'>Permissions</a> page for that information.</p>
+<h4>Vanishing</h4>
+<p>/vanish
+  <ul>
+    <li>Basic vanish toggle</li>
+    <li>If config <i>fakeannounce.automaticforsilentjoin</i> is enabled, after a no-announce join there will be a fake announce here</li>
+    <li>Permission node: <i>vanish.vanish</i></li>
+    <li>Alternate command: /v
+      <ul><li><i>Note: For all /vanish commands, can replace 'vanish' with 'v'</i></li></ul>
+    </li>
+  </ul>
+</p>
+<p>/vanish fakequit<br>
+  /vanish fakejoin
+  <ul>
+    <li>For fake quit, will ensure you are invisible and will fake an announcement unless already faked. Reverse for join.</li>
+    <li>To force a fake announcement, put 'force' at the end, and it will always announce</li>
+    <li>Permission nodes: <i>vanish.vanish</i>, <i>vanish.fakeannounce</i>
+    <li>Alternate command: 
+      <ul>
+        <li>Can replace 'fakequit' with 'fq' and 'fakejoin' with fj.</li>
+        <li>Can replace 'force' with 'f'</li>
+      </ul>
+    </li>
+  </ul>
+</p>
+<p>/vanish on<br>
+  /vanish off
+  <ul>
+    <li>Set oneself visible or invisible. A toggle-free /vanish</li>
+    <li>Add 'fake' at the end to send a fake announcement.
+      <ul><li><i>This feature requires vanish.fakeannounce permission node</i></li></ul>
+    </li>
+    <li>Permission node: <i>vanish.vanish</i></li>
+  </ul>
+</p>
+<h4>Toggling</h4>
+<p>/vanish toggle
+  <ul>
+    <li>List features you can toggle</li>
+    <li>Command /vanish toggle &lt;option&gt;
+      <ul>
+        <li>Toggles the option stated<li>
+        <li>List of options:
+          <ul>
+            <li>see - See vanished players</li>
+            <li>nopickup - Block picking up dropped items
+              <ul><li>Can also toggle with /np</li></ul>
+            </li>
+            <li>nofollow - Block mobs from targeting you
+              <ul><li>Can also toggle with /nf</li></ul>
+            </li>
+            <li>nointeract - Block any interactions
+              <ul>
+                <li>Can also toggle with /ni</li>
+                <li>Block breaking</li>
+                <li>Block placing</li>
+                <li>Pressure plates, buttons, other redstony things</li>
+                <li>Hit things</li>
+              </ul>
+            </li>
+            <li>nohunger - Prevent losing hunger (or gaining!)
+              <ul><li>Can also toggle with /nh</li></ul>
+            <li>
+            <li>nochat - Prevent chat
+              <ul><li>Can also toggle wth /nc</li></ul>
+            </li>
+            <li>chests - Silent chest opening (read only)</li>
+            <li>damage-in - Block being hurt</li>
+            <li>damage-out - Block hurting others</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Alternate command: Can replace 'toggle' with 't'</li>
+    <li>Permission node: See <a href='{{ site.url }}/permissions/'>permissions</a> documentation for all toggle permissions</li>
+  </ul>
+</p>
+<p>/vanish effects
+  <ul>
+    <li>List effects you can toggle</li>
+    <li>Command /vanish effects &lt;option&gt;
+      <ul>
+        <li>Toggles the option stated</li>
+        <li>List of options:
+          <ul>
+            <li>smoke</li>
+            <li>explode</li>
+            <li>lightning<ul><li>Number of bolts can be configured</li></ul></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Alternate command: Can replace 'effects' with 'e'</li>
+    <li>Permission node: See <a href='{{ site.url }}/permissions/'>permissions</a> documentation for all toggle permissions</li>
+  </ul>
+</p>
+
+<h4>Management</h4>
+<p>/vanish check
+  <ul><li>Check your visibility</li></ul>
+</p>
+<p>/vanish list
+  <ul>
+    <li>Get a list of vanished users</li>
+    <li>Permission node: <i>vanish.list</i></li>
+  </ul>
+</p>
+<p>/vanish reload
+  <ul>
+    <li>Reload most configuration options</li>
+    <li>Permission node: <i>vanish.reload</i></li>
+  </ul>
+</p>

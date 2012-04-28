@@ -1,0 +1,37 @@
+---
+layout: layout
+title: Spoutcraft
+---
+<h3>Spoutcraft features</h3>
+
+<p>When enabled (see <a href="{{ site.url }}/configuration">Configuration</a>), many nifty features are available.<br>
+Custom capes, skins, and titles displayed on vanished users to those running Spoutcraft.</p>
+
+<h4>Custom permissions</h4>
+<p>In order to grant all these cool things, permission nodes are checked to define what a vanished player gets.<br>
+Below is the default, example spoutcraft.yml:<br>
+<pre>
+cloaks:
+    moderator: http://s3.amazonaws.com/MinecraftCloaks/jeb_.png
+    admin: http://s3.amazonaws.com/MinecraftCloaks/Notch.png
+skins:
+    moderator: http://s3.amazonaws.com/MinecraftSkins/jeb_.png
+    admin: http://s3.amazonaws.com/MinecraftSkins/Notch.png
+titles:
+    vanished: '&&b%n%rVanished'
+</pre>
+In this example, there is a cloak and skin "group" called "admin" and one called "moderator", and a title group of "vanished".<br>
+To give a user the admin cloak, grant them the permission node <b>vanish.spout.cloak.admin</b><br>
+To give a user the moderator skin, grant them the permission node <b>vanish.spout.skin.moderator</b><br>
+To give a user the vanished title, grant them the permission node <b>vanish.spout.title.vanished</b><br>
+<br>
+You can create whatever names you want for cloaks, skins and titles. These are just examples. 
+<br>
+<h4>Skins and cloaks</h4>
+<p>These values are URLs to images.The example above points to the official minecraft skin/cloak urls</p>
+<h4>Titles</h4>
+<p>
+  Use && as the color code. So, &&b in the example above is setting everything light blue.<br>
+  Use %n for the player's name.<br>
+  Use %r for a linebreak
+</p>

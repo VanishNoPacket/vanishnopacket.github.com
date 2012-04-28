@@ -1,0 +1,142 @@
+---
+layout: layout
+title: Permissions Nodes
+---
+<h3>Permissions</h3>
+
+<p>There are three "group" permission nodes, that give a bunch of nodes.<br>
+First, a list of those nodes.  Then, <a href="#parents">parent nodes</a> and lastly <a href="#breakdown">defining what every single node is</a>.<br>
+I generally suggest you give yourself vanish.standard<p>
+
+<pre>
+<b>vanish.standard</b>:
+  vanish.see
+  vanish.vanish
+  vanish.list
+  vanish.nopickup
+  vanish.nofollow
+  vanish.notrample
+  vanish.nointeract
+  vanish.nohunger
+  vanish.fakeannounce
+  vanish.preventdamage
+  vanish.statusupdates
+  vanish.adminalerts
+  vanish.silentchests
+
+<b>vanish.op</b>: The nodes that ops get
+  vanish.reload
+  vanish.adminalerts
+  vanish.permtest.all
+  vanish.see
+  vanish.vanish
+  vanish.statusupdates
+  vanish.list
+
+<b>vanish.*</b>: Every node ever.
+  vanish.standard
+  vanish.nochat
+  vanish.silentjoin
+  vanish.silentquit
+  vanish.toggle.all
+  vanish.hooks.dynmap.alwayshidden
+  vanish.hooks.essentials.hide
+  vanish.permtest.all
+  vanish.spout.status
+  vanish.reload
+  vanish.effects.smoke
+  vanish.effects.explode
+  vanish.effects.lightning
+  vanish.effects.toggle.all</pre>
+  
+<h4 id="parents">Parent nodes</h4>
+<p>These nodes being true make the nodes listed under them true as well</p>
+<pre>
+<b id="preventdamage">vanish.preventdamage</b>:
+  vanish.preventoutgoingdamage
+  vanish.preventincomingdamage
+  
+<b id="silentjoin">vanish.silentjoin</b>:
+  vanish.joinwithoutannounce
+  vanish.joinvanished
+  
+<b id="toggledamage">vanish.toggle.damage</b>:
+  vanish.toggle.damageout
+  vanish.toggle.damagein
+  
+<b id="toggleall">vanish.toggle.all</b>:
+  vanish.toggle.silentchests
+  vanish.toggle.see
+  vanish.toggle.nopickup
+  vanish.toggle.nofollow
+  vanish.toggle.damage
+  vanish.toggle.nointeract
+  vanish.toggle.nochat
+  vanish.toggle.nohunger
+
+<b id="effectstoggleall">vanish.effects.toggle.all</b>:
+  vanish.effects.toggle.smoke
+  vanish.effects.toggle.explode
+  vanish.effects.toggle.lightning
+</pre>
+
+<h4 id="breakdown">All nodes</h4>
+
+<pre><b>vanish.vanish</b> - Vanish
+<b>vanish.see</b> - See vanished players
+<b>vanish.statusupdates</b> - Notification in chat about vanish status changes
+<b>vanish.list</b> - Get a list of vanished users
+<b>vanish.fakeannounce</b> - Fake joining and quitting
+<b>vanish.adminalerts</b> - Receive alerts about updates
+<b>vanish.reload</b> - Reload config stuffs
+
+Vanish status effects:
+<b>vanish.nopickup</b> - Block item pickups
+<b>vanish.nofollow</b> - Block mob targeting
+<b>vanish.notrample</b> - Block crop trampling
+<b>vanish.nointeract</b> - Block placing/breaking/touching
+<b>vanish.nochat</b> - Block chatting
+<b>vanish.nohunger</b> - Block changing hunger level
+<b>vanish.preventincomingdamage</b> - Prevent being hurt
+<b>vanish.preventoutgoingdamage</b> - Prevent hurting others
+<b><a href="#preventdamage">vanish.preventdamage</a></b> - Parent node to block all damaging
+<b>vanish.silentchests</b> - Open chests read-only, no chest animation
+
+<b>vanish.joinwithoutannounce</b> - Join the server without a "has joined"
+<b>vanish.joinvanished</b> - Join the server already vanished
+<b><a href="#silentjoin">vanish.silentjoin</a></b> - Join vanished without announce
+<b>vanish.silentquit</b> - Always (ALWAYS) leave the server without a 
+                     "has quit" message. ALWAYS.
+                     If you want to not quit-message while vanished,
+                     just do a fakequit when vanishing
+
+Toggling. See above status effects:
+<b>vanish.toggle.nopickup</b>
+<b>vanish.toggle.see</b>
+<b>vanish.toggle.nofollow</b>
+<b>vanish.toggle.notrample</b>
+<b>vanish.toggle.nointeract</b>
+<b>vanish.toggle.nochat</b>
+<b>vanish.toggle.nohunger</b>
+<b>vanish.toggle.silentchests</b>
+<b>vanish.toggle.damagein</b>
+<b>vanish.toggle.damageout</b>
+<b><a href="#toggledamage">vanish.toggle.damage</a></b>
+<b><a href="#toggleall">vanish.toggle.all</a></b>
+
+Hooks features:
+<b>vanish.hooks.dynmap.alwayshidden</b> - Be ALWAYS (ALWAYS) hidden on dynmap
+<b>vanish.hooks.essentials.hide</b> - Hide in essentials
+<b>vanish.spout.status</b> - See a status bar if vanished on Spoutcraft
+
+Effects:
+<b>vanish.effects.smoke</b> - Smoke effect on vanish toggle
+<b>vanish.effects.explode</b> - Explosion effect on vanish toggle
+<b>vanish.effects.lightning</b> - Lightning strike on vanish toggle
+
+Effects toggling:
+<b>vanish.effects.toggle.smoke</b>
+<b>vanish.effects.toggle.explode</b>
+<b>vanish.effects.toggle.lightning</b>
+<b><a href="#effectstoggleall">vanish.effects.toggle.all</a></b>
+</pre>

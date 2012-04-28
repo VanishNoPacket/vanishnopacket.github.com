@@ -1,0 +1,129 @@
+---
+layout: layout
+title: Configuration
+---
+<h3>Configuration</h3>
+
+<p>For this documentation, if a value is listed as <b>monkey.banana</b> then it looks like
+<pre>monkey
+    banana: value</pre>
+</p>
+
+<h4>Fake announcement settings</h4>
+<p>These settings define things related to fake joining and quitting.</p>
+<p>
+  <b>fakeannounce.join<br>fakeannounce.quit</b>
+  <ul>
+    <li>Format for the message sent when a player fake joins or quits.</li>
+    <li>It will be by default yellow unless you add a color code</li>
+    <li>You can use the following formatting features:
+      <ul>
+        <li>%p - Player's name</li>
+        <li>%d - Player's displayname (Some plugins set this to be different from name, with colors and such)</li>
+        <li>&& - The color character. For instance, &&a would be light green. Colors <a href="#Colors">here</a></li>
+        <li>%up - bPermissions prefix, if you use bPermissions</li>
+        <li>%us - bPermissions suffix, if you use bPermissions</li>
+        <li>%city - Player's city, if you use GeoIPTools</li>
+        <li>%country - Player's country, if you use GeoIPTools</li>
+      </ul>
+    </li>
+    <li>Default values:
+      <ul>
+        <li>fakeannounce.join: '%p joined the game.'
+        <li>fakeannounce.quit: '%p left the game.'
+      </ul>
+    </li>
+  </ul>
+  <b>fakeannounce.automaticforsilentjoin</b>
+  <ul>
+    <li>If true, a player who joins without an announce message (See <a href="{{ site.url }}/permissions">permissions</a>) will automatically fake an announce on unvanishing</li>
+    <li>Default value: false</li>
+  </ul>
+</p>
+<h4>Plugin hooks</h4>
+<p>Set any of these to true to enable the hook. All are by default false.<br>
+Other plugins are mentioned in this configuration, but they are always enabled as they do not change anything</p>
+<p>
+  <b>hooks.essentials</b>
+  <ul>
+    <li>Enable hooking Essentials</li>
+    <li>Users with the right permissions node (See <a href="{{ site.url }}/permissions">permissions</a>) will be hidden in Essentials when vanished</li>
+  </ul>
+  <b>hooks.dynmap</b>
+  <ul>
+    <li>Enable hooking dynmap</li>
+    <li>Vanished users will not be shown on the map</li>
+    <li>Users with a certain permissions node (See <a href="{{ site.url }}/permissions">permissions</a>) will ALWAYS be hidden.</li>
+  </ul>
+  <b>hooks.JSONAPI</b>
+  <ul>
+    <li>Enable hooking JSONAPI</li>
+    <li>Adds a method to JSONAPI: isVanished(name)
+      <ul><li>Returns true if the player is vanished</li></ul>
+    </li>
+  </ul>
+  <b>hooks.spoutcraft</b>
+  <ul>
+    <li>Enable Spoutcraft features (requires the Spout plugin and only works for users with Spoutcraft client)</li>
+    <li>Custom capes, skins, or titles for vanished players
+      <ul>
+        <li>Those features require additional setup</li>
+        <li>See <a href="{{ site.url }}/configuration/spoutcraft">here</a> for more information on Spoutcraft configuration</li>
+      </ul>
+    </li>
+    <li>Users with a certain permissions node (See <a href="{{ site.url }}/permissions">permissions</a>) get a notification bar as well</li>
+  </ul>
+</p>
+<h4>Other configuration options</h4>
+<p>
+  <b>checkupdates</b>
+  <ul>
+    <li>Check if there are updates. </li>
+    <li>Will check every 6 hours, sending version info and server port (for statistical purposes)</li>
+    <li>Does not send any info on first run, to give you the chance to change values<li>
+    <li>Default value: true</li>
+  </ul>
+  <b>permissionsupdates.checkonworldchange</b>
+  <ul>
+    <li>If true, when a player changes world their vanish.vanish permission is checked and if false, player is set visible</li>
+    <li>Default value: false</li>
+  </ul>
+  <b>effects.lightning.count</b>
+  <ul>
+    <li>Sets the number of bolts to fire when a user with the lightning effect (See <a href="{{ site.url }}/permissions">permissions</a>) toggles visibility</li>
+    <li>Default value: 30</li>
+  </ul>
+</p>
+<h4>Debug and system options</h4>
+<p>These are settings you won't need to deal with unless getting help debugging</p>
+<p>
+  <b>debug</b>
+  <ul><li>Enables some debug output</li></ul>
+  <b>permtest</b>
+  <ul>
+    <li>Enables permissions testing command in-game</li>
+    <li>Command is /permtest permission.node or /permtest player permission.node</li>
+    <li>Requires permissions:
+      <ul>
+        <li>vanish.permtest.self for self testing (by default true for all)</li>
+        <li>vanish.permtest.other for testing other players (by default op only)</li>
+      </ul>
+    </li>
+  </ul>
+  <b>configVersionDoNotTouch.SeriouslyThisWillEraseYourConfig</b>
+  <ul>
+    <li>Used internally to track your config's version, in case value names are changed</li>
+    <li>As the name says, just don't touch this. It will update itself.</li>
+    <li>The number here does NOT refer to the version of VanishNoPacket</li>
+  </ul>
+</p>
+
+
+
+
+
+
+
+
+<h4 id="Colors">Chat colors</h4>
+<img src="{{ site.url }}/images/Colors.png" />
