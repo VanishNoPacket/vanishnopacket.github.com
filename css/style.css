@@ -211,6 +211,10 @@ body {
 	overflow: hidden;
 }
 
+#page .header .footer .body #content .content a {
+	color: white;
+}
+
 #page .header .footer .body #content .content ul li {
 	list-style-type: none;
 	padding-right: 40px;
